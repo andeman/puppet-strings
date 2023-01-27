@@ -15,7 +15,9 @@ module PuppetStrings::Markdown::Helpers
     puts "Code: #{code}"
     puts "Type: #{type}"
     puts "Is code var a String: #{code.is_a? String}"
-    puts "cade var type: #{type(code)}"
+    if type == "ruby"
+      puts "cade var type: #{type(code)}"
+    end
 
     if code.is_a? String and code.include?("\n")
       "#{block_prefix}```#{type}\n#{code}\n```"
