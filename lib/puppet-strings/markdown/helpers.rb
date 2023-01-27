@@ -14,6 +14,9 @@ module PuppetStrings::Markdown::Helpers
   def code_maybe_block(code, type: :puppet, block_prefix: "\n\n", inline_prefix: ' ')
     puts "Code: #{code}"
     puts "Type: #{type}"
+    puts "Is code var a String: #{code.is_a? String}"
+    puts "cade var type: #{type(code)}"
+
     if code.include?("\n")
       "#{block_prefix}```#{type}\n#{code}\n```"
     else
