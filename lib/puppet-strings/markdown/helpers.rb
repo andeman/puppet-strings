@@ -12,13 +12,6 @@ module PuppetStrings::Markdown::Helpers
   # @param [String] inline_prefix String to insert before if it’s inline.
   # @returns [String] Markdown
   def code_maybe_block(code, type: :puppet, block_prefix: "\n\n", inline_prefix: ' ')
-    puts "Code: #{code}"
-    puts "Type: #{type}"
-    puts "Is code var a String: #{code.is_a? String}"
-    if type == "ruby"
-      puts "cade var type: #{type(code)}"
-    end
-
     if code.is_a? String and code.include?("\n")
       "#{block_prefix}```#{type}\n#{code}\n```"
     else
